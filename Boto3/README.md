@@ -50,7 +50,6 @@ s3 = boto3.client('s3', aws_access_key_id='AKIAYEZXHKI7RVQFY6VJ',
                          aws_secret_access_key='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',
                       region_name = 'ap-southeast-2'
                   )
-buckets = s3.list_buckets()
 my_bucket = 'haaws-bucket'
 with open('./bucket_test.txt', 'rb') as f:
 s3.upload_fileobj(f, my_bucket, "new_bucket_test.txt", ExtraArgs={"ACL": "public-read"})
@@ -63,7 +62,6 @@ s3 = boto3.client('s3', aws_access_key_id='AKIAYEZXHKI7RVQFY6VJ',
                          aws_secret_access_key='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',
                       region_name = 'ap-southeast-2'
                   )
-buckets = s3.list_buckets()
 my_bucket = 'haaws-bucket'
 s3.download_file(my_bucket, "bucket_test.txt", "download_bucket.txt")
 ```
