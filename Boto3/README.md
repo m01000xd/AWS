@@ -52,7 +52,7 @@ s3 = boto3.client('s3', aws_access_key_id='AKIAYEZXHKI7RVQFY6VJ',
                   )
 my_bucket = 'haaws-bucket'
 with open('./bucket_test.txt', 'rb') as f:
-s3.upload_fileobj(f, my_bucket, "new_bucket_test.txt", ExtraArgs={"ACL": "public-read"})
+  s3.upload_fileobj(f, my_bucket, "new_bucket_test.txt", ExtraArgs={"ACL": "public-read"})
 ```
 
 ### Download file từ bucket về máy
