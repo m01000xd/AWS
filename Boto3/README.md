@@ -66,17 +66,7 @@ my_bucket = 'haaws-bucket'
 s3.download_file(my_bucket, "bucket_test.txt", "download_bucket.txt")
 ```
 
-### In ra màn hình tất cả các bucket đang có
-```python
-import boto3
-s3 = boto3.client('s3', aws_access_key_id='AKIAYEZXHKI7RVQFY6VJ',
-                         aws_secret_access_key='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',
-                      region_name = 'ap-southeast-2'
-                  )
-buckets = s3.list_buckets()
-for bucket in buckets['Buckets']:
-    print(bucket)
-```
+
 
 ### In ra màn hình các file có trong 1 bucket
 ```python
@@ -85,7 +75,6 @@ s3 = boto3.client('s3', aws_access_key_id='AKIAYEZXHKI7RVQFY6VJ',
                          aws_secret_access_key='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',
                       region_name = 'ap-southeast-2'
                   )
-buckets = s3.list_buckets()
 my_bucket = 'haaws-bucket'
 objects = s3.list_objects_v2(Bucket=my_bucket)
 for obj in objects['Contents']:
